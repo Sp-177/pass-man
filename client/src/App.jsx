@@ -6,6 +6,8 @@ import PageNotFound from './components/PageNotFound';
 import Profile from './components/Profile';
 import Reset from './components/Reset';
 import Recovery from './components/Recovery';
+import VantaWaves from './components/VantaWaves';
+
 const route= createBrowserRouter([
   {
     path:'/',
@@ -42,7 +44,12 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={route}></RouterProvider>
+     
+    
+    <VantaWaves/> 
+    <RouterProvider router={route}/>
+    
+    
      
     </>
   )
