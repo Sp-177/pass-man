@@ -19,10 +19,10 @@ const VantaWaves = () => {
     const loadVanta = async () => {
       try {
         await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js');
-        await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js');
+        await loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js');
 
         if (window.VANTA) {
-          window.VANTA.WAVES({
+          window.VANTA.BIRDS({
             el: vantaRef.current,
             mouseControls: true,
             touchControls: true,
@@ -41,8 +41,8 @@ const VantaWaves = () => {
     loadVanta();
 
     return () => {
-      if (window.VANTA && window.VANTA.WAVES) {
-        window.VANTA.WAVES.destroy();
+      if (window.VANTA && window.VANTA.BIRDS) {
+        window.VANTA.BIRDS.destroy();
       }
     };
   }, []);
