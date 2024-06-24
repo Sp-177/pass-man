@@ -1,9 +1,12 @@
 
 import '../index.css';
 import { Link } from 'react-router-dom';
+import Vanta from './Vanta';
+
 export default function Username() {
   return (
    <>
+   <Vanta></Vanta>
     <div className="canvas">
         <div className='container'>
             <div className='header'>
@@ -12,7 +15,7 @@ export default function Username() {
                 <span>Expore More by connecting with us</span>
              </div>
              <div className='profile'>
-             <lord-icon src="https://cdn.lordicon.com/szoiozyr.json"trigger="in"state="in-reveal" style={{width:'90px',height:'90px'}}></lord-icon>
+             <lord-icon src="https://cdn.lordicon.com/szoiozyr.json" trigger='in' state='in-reveal'  style={{width:'90px',height:'90px'}}></lord-icon>
              </div>
              <div>
                 <form>

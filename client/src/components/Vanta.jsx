@@ -1,9 +1,9 @@
 // src/components/VantaWaves.js
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef ,useState} from 'react';
 
-const VantaWaves = () => {
+const Vanta = () => {
   const vantaRef = useRef(null);
-
+  const [vantaEffect,setVantaEffect] = useState(null);
   useEffect(() => {
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
@@ -32,6 +32,7 @@ const VantaWaves = () => {
             scale: 1.00,
             scaleMobile: 1.00,
           });
+          
         }
       } catch (error) {
         console.error('Error loading scripts:', error);
@@ -39,10 +40,11 @@ const VantaWaves = () => {
     };
 
     loadVanta();
+    setVantaEffect(window.VANTA);
 
     return () => {
-      if (window.VANTA && window.VANTA.BIRDS) {
-        window.VANTA.BIRDS.destroy();
+      if (vantaEffect) {
+        vantaEffect.destroy();
       }
     };
   }, []);
@@ -50,4 +52,4 @@ const VantaWaves = () => {
   return <div ref={vantaRef} style={{  position: 'fixed', width: '100%', height: '100%', top: 0, left: 0, zIndex: -1 }} />;
 };
 
-export default VantaWaves;
+export default Vanta;
