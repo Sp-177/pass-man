@@ -6,6 +6,8 @@ import PageNotFound from './components/PageNotFound';
 import Profile from './components/Profile';
 import Reset from './components/Reset';
 import Recovery from './components/Recovery';
+import { ThemeProvider} from './components/contexts/modetoggle';
+import { useEffect, useState } from 'react';
 
 
 const route= createBrowserRouter([
@@ -42,14 +44,24 @@ const route= createBrowserRouter([
   }
 ]);
 function App() {
+  // const [theme,setThemeMode]=useState("light")
+  // const [setTheme,setSetTheme] = useState(
+  //   setThemeMode(theme==='light'?'dark':'light')
+  // );
+  // useEffect(()=>{
+  //   document.getElementById('toggle').onclick(console.log(document.getElementsByClassName('container').length));
+  //   setSetTheme('dark');
 
+    
+  // },[theme]);
 
   return (
     <>
      
     
-    
+    {/* <ThemeProvider value={{theme,setTheme}}> */}
     <RouterProvider router={route}/>
+    {/* </ThemeProvider> */}
     
     
      

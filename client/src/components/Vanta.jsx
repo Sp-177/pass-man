@@ -31,6 +31,7 @@ const Vanta = () => {
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
+            color: 0x697ac2
           });
           
         }
@@ -40,13 +41,9 @@ const Vanta = () => {
     };
 
     loadVanta();
-    setVantaEffect(window.VANTA);
+    
 
-    return () => {
-      if (vantaEffect) {
-        vantaEffect.destroy();
-      }
-    };
+    
   }, []);
 
   return <div ref={vantaRef} style={{  position: 'fixed', width: '100%', height: '100%', top: 0, left: 0, zIndex: -1 }} />;
