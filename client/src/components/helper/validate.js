@@ -14,18 +14,52 @@ export async function passwordValidate(values){
  
 }
 
+export async function otpValidate(values){
+    const error =otpVerify({},values);
+    return error;
+
+}
+
+export async function secondPasswordValidate(values){
+    const error =passwordVerify({},values);
+    if(values.password!==values.secondPassword){
+        error.secondPassword=toast.error("Passwords do not match");
+    }
+    return error;
+}
+
+
 function passwordVerify(error={},values){
+    let pattern = new RegExp(
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$"
+    );
+    
     if(!values.password){
         error.password=toast.error("Please enter a password");
     }
     else if(values.password.length<8){
         error.password=toast.error("Password should be at least 8 characters long");
     }
-    else if(!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(values.password)){
+    else if((pattern.test(values.password))===false){
         error.password=toast.error("Password should contain at least one uppercase letter, one lowercase letter, one number, and one special character");
     }
+    
     return error;
 
+}
+
+
+function otpVerify(error={},values){
+    if(!values.otp){
+        error.otp=toast.error("Please enter a OTP");
+    }
+    else if(isNaN(values.otp)){
+        error.otp=toast.error("OTP should be a number");
+    }
+    else if(values.otp.length!==6){
+        error.otp=toast.error("OTP should be 6 digits long");
+    }
+    return error;
 }
 function usernameVerify(error={},values){
     if(!values.username){ 

@@ -37,7 +37,7 @@ export default function Password() {
                   
                     <div style={{display:'flex' , justifyContent:'center', alignContent:'center'}}>
                     
-                        <input id="inputpassword" type='password' placeholder='password' {... formik.getFieldProps('password')}></input>
+                        <input id="inputpassword" type='password' placeholder='password...' {... formik.getFieldProps('password')}></input>
                         <button id="submit"type='submit'>Sign In</button>
                     </div>
                     <div className='button' style={{display:'flex', flexDirection:'column'}}>

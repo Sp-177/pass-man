@@ -45,8 +45,8 @@
 }
 
 .profile {
-  width: 7.8125rem; /* 125px / 16 */
-  height: 7.8125rem; /* 125px / 16 */
+  width: 9rem; /* 125px / 16 */
+  height: 9rem; /* 125px / 16 */
   background-color: white;
   border-radius: 100%;
   display: flex;
