@@ -37,12 +37,12 @@ export default function Recovery() {
                   
                     <div style={{display:'flex' , justifyContent:'center', alignContent:'center'}}>
                     
-                        <input  type='text' maxLength={6}  placeholder='OTP' {... formik.getFieldProps('otp')}></input>
+                        <input  type='tel' pattern="\d*"  maxLength={6}  placeholder='OTP' {... formik.getFieldProps('otp')} ></input>
                         <button id="submit"type='submit'>Enter</button>
                     </div>
                     <div className='button' style={{display:'flex', flexDirection:'column'}}>
                         <span>Can&apos;t get the OTP ?</span>
-                     <Link className='button' to='/reset'><span> Resend!</span><lord-icon src="https://cdn.lordicon.com/twemlvxy.json"trigger="loop"></lord-icon></Link>
+                     <Link className='button' to='/recovery'><span> Resend!</span><lord-icon src="https://cdn.lordicon.com/twemlvxy.json"trigger="loop"></lord-icon></Link>
                     </div>
                    
                 </form>

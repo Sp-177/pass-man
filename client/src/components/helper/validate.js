@@ -14,10 +14,21 @@ export async function passwordValidate(values){
  
 }
 
+export async function registerValidate(values){
+    const errors=emailVerify({},values);
+    usernameVerify(errors,values);
+    passwordVerify(errors,values);
+
+    return errors;
+}
 export async function otpValidate(values){
     const error =otpVerify({},values);
     return error;
 
+}
+export async function  emailValidate(values){
+    const error = emailVerify({},values);
+    return error;
 }
 
 export async function secondPasswordValidate(values){
@@ -29,7 +40,9 @@ export async function secondPasswordValidate(values){
 }
 
 
+
 function passwordVerify(error={},values){
+   
     let pattern = new RegExp(
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$"
     );
@@ -40,7 +53,7 @@ function passwordVerify(error={},values){
     else if(values.password.length<8){
         error.password=toast.error("Password should be at least 8 characters long");
     }
-    else if((pattern.test(values.password))===false){
+    else if((pattern.test(values.password))==false){
         error.password=toast.error("Password should contain at least one uppercase letter, one lowercase letter, one number, and one special character");
     }
     
@@ -69,4 +82,20 @@ function usernameVerify(error={},values){
         error.username=toast.error("Invlide username");
     }
     return error;
+}
+
+function emailVerify(error={},values){
+    let pattern = new RegExp(
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    );
+    
+    if(!values.email){
+        error.email=toast.error("Please enter an email");
+    }
+    else if((pattern.test(values.email))===false){
+        error.email=toast.error("Please enter a valid email");
+    }
+    
+    return error;
+ 
 }

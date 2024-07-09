@@ -26,12 +26,14 @@
   justify-content: center;
   align-items: center;
   padding: 1rem; /* Add padding for better appearance */
+
 }
 
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
   align-items: center;
   padding: 1.25rem; /* 20px / 16 */
   text-align: center; /* Center text content */

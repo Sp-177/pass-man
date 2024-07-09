@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import Vanta from './Vanta';
 import {Toaster} from 'react-hot-toast';
 import {useFormik} from 'formik';
-import { usernameValidate } from './helper/validate';
-export default function Username() {
+import { registerValidate } from './helper/validate';
+export default function Register() {
     const formik=useFormik({
         initialValues:{
-            username:''
+          email:'',
+            username:'',
+            password:''
         },
-        validate:usernameValidate,
+        validate:registerValidate,
         validateOnBlur:false,
         validateOnChange:false,
         onSubmit: async values=>{
@@ -21,26 +23,28 @@ export default function Username() {
    <>
    <Vanta></Vanta>
     <div className="canvas">
-        <div className='container'>
+        <div className='container'  >
             <Toaster position="top-center" reverseOrder={false} />
             <div className='header'>
-             <div style={{textAlign:'center'}}>
-                <h1>Hello Again !</h1>
-                <span>Expore More by connecting with us</span>
+             <div style={{textAlign:'center',marginTop:'-25px'}}>
+                <h1>Register</h1>
+                <span>Happy to join us !</span>
              </div>
-             <div className='profile'>
-             <lord-icon src="https://cdn.lordicon.com/szoiozyr.json" trigger='in' state='in-reveal'  style={{width:'90px',height:'90px'}}></lord-icon>
+             <div className='profile' style={{textAlign:'center',marginBottom:'-25px'}}>
+             <lord-icon src="https://cdn.lordicon.com/vducvgjw.json"trigger="loop"style={{width:'200px',height:'200px'}}></lord-icon>
              </div>
              <div>
                 <form  onSubmit={formik.handleSubmit}>
-                    <div style={{display:'flex' , justifyContent:'center', alignContent:'center'}}>
+                    <div style={{display:'flex',flexDirection:'column' , justifyContent:'center', alignContent:'center',marginBottom:'-15px'}}>
                     
+                        <input type='text' placeholder='email' {... formik.getFieldProps('email')}></input>
                         <input type='text' placeholder='username' {... formik.getFieldProps('username')}></input>
-                        <button id="submit"type='submit'>Let&apos;s Go</button>
+                        <input type='text' placeholder='password' {... formik.getFieldProps('password')}></input>
+                        <button id="submit"type='submit'>Login</button>
                     </div>
                     <div className='button' style={{display:'flex', flexDirection:'column'}}>
-                        <span>Not a member ?</span>
-                     <Link className='button' to='/register'><span> Register</span><lord-icon  src="https://cdn.lordicon.com/akqsdstj.json"trigger="loop"delay="10"></lord-icon></Link>
+                        <span>Already Registered ?</span>
+                     <Link className='button' to='/'><span>Login</span><lord-icon  src="https://cdn.lordicon.com/akqsdstj.json"trigger="loop"delay="10"></lord-icon></Link>
                     </div>
                    
                 </form>

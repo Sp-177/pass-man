@@ -3,9 +3,20 @@ import '../index.css';
 import { Link } from 'react-router-dom';
 import Vanta from './Vanta';
 import {Toaster} from 'react-hot-toast';
-
+import {useFormik} from 'formik';
+import { usernameValidate } from './helper/validate';
 export default function Username() {
-   
+    const formik=useFormik({
+        initialValues:{
+            username:''
+        },
+        validate:usernameValidate,
+        validateOnBlur:false,
+        validateOnChange:false,
+        onSubmit: async values=>{
+            console.log(values);
+        }
+    });
   return (
    <>
    <Vanta></Vanta>
@@ -24,7 +35,7 @@ export default function Username() {
                 <form  onSubmit={formik.handleSubmit}>
                     <div style={{display:'flex' , justifyContent:'center', alignContent:'center'}}>
                     
-                        <input type='text' placeholder='username...' ></input>
+                        <input type='text' placeholder='username...'   {...formik.getFieldProps('username')}></input>
                         <button id="submit"type='submit'>Let&apos;s Go</button>
                     </div>
                     <div className='button' style={{display:'flex', flexDirection:'column'}}>
