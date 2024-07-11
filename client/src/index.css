@@ -1,9 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+button,input{
+  border: 1px solid ;
+}
 .container {
   width: 100%;
   max-width: 25rem; /* 400px / 16 */

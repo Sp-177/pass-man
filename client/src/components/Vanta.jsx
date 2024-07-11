@@ -3,7 +3,7 @@ import React, { useEffect, useRef ,useState} from 'react';
 
 const Vanta = () => {
   const vantaRef = useRef(null);
-  const [vantaEffect,setVantaEffect] = useState(null);
+  // const [vantaEffect,setVantaEffect] = useState(null);
   useEffect(() => {
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {

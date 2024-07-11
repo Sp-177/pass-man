@@ -35,7 +35,7 @@ export default function Password() {
              <lord-icon src="https://cdn.lordicon.com/neujejkf.json"trigger="loop" delay='1000'style={{width:'250px',height:'250px'}}></lord-icon>
              </div>
              <div>
-             <button style={{borderTop:'solid black 6px',borderRadius:'30% 30% 25% 25%',margin:'-10px'}} onClick={()=>{var x = document.getElementById("inputpassword");var z = document.getElementById("inputpassword1");z.type='text';x.type='text';setTimeout(()=>{x.type='password';z.type='password';},2000)}}><lord-icon src="https://cdn.lordicon.com/mgszhlom.json"trigger="click" style={{width:'50px',height:'50px',margin:'-10px'}}></lord-icon></button>
+             <button style={{borderTop:'solid black 8px',borderRadius:'30% 30% 45% 45%',margin:'-10px'}} onClick={()=>{var x = document.getElementById("inputpassword");var z = document.getElementById("inputpassword1");z.type='text';x.type='text';setTimeout(()=>{x.type='password';z.type='password';},2000)}}><lord-icon src="https://cdn.lordicon.com/mgszhlom.json"trigger="click" style={{width:'50px',height:'50px',margin:'-10px'}}></lord-icon></button>
                 <form  onSubmit={formik.handleSubmit}>
                   
                     <div style={{display:'flex',flexDirection:'column' , justifyContent:'center', alignContent:'center'}}>

@@ -6,8 +6,8 @@ import PageNotFound from './components/PageNotFound';
 import Profile from './components/Profile';
 import Reset from './components/Reset';
 import Recovery from './components/Recovery';
-import { ThemeProvider} from './components/contexts/modetoggle';
-import { useEffect, useState } from 'react';
+import Manger from './components/Manger';
+
 
 
 const route= createBrowserRouter([
@@ -15,7 +15,7 @@ const route= createBrowserRouter([
     path:'/',
 
     element:
-    <Username/>
+    <Manger/>         //HERE should be username Replace it 
   },
   {
     path:'/register',
